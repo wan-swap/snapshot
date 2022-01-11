@@ -51,7 +51,7 @@
             </template>
             <UiButton
               v-if="!$auth.isAuthenticated"
-              @click="modalOpen = true"
+              @click="handleConnectWallet"
               :loading="loading"
             >
               <span class="hide-sm" v-text="'Connect wallet'" />
@@ -112,6 +112,13 @@ export default {
       this.loading = true;
       await this.login(connector);
       this.loading = false;
+    },
+    handleConnectWallet() {
+      if (!window.injectWeb3) {
+        this.modalOpen = true;
+      } else {
+        this.handleLogin('injectedWanWallet');
+      }
     }
   }
 };

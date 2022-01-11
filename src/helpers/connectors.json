@@ -6,5 +6,9 @@
   "injectedMetaMask": {
     "id": "injectedMetaMask",
     "name": "MetaMask"
+  },
+  "injectedWanWallet": {
+    "id": "injectedWanWallet",
+    "name": "WanWallet"
   }
 }
