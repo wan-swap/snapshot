@@ -68,6 +68,7 @@ const actions = {
   },
   logout: async ({ commit }) => {
     Vue.prototype.$auth.logout();
+    Vue.prototype.$auth.isAuthenticated = false;
     commit('LOGOUT');
   },
   loadProvider: async ({ commit, dispatch }) => {
